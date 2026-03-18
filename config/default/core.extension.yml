@@ -106,6 +106,7 @@ module:
   sam: 0
   scheduler: 0
   scheduler_content_moderation_integration: 0
+  shs: 0
   simple_sitemap: 0
   simple_sitemap_engines: 0
   smart_date: 0

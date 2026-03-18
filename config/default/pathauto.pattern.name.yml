@@ -1,0 +1,22 @@
+uuid: 01043d73-b5e4-45bc-83e4-c01a8076ff55
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: name
+label: Name
+type: 'canonical_entities:taxonomy_term'
+pattern: '/[term:name]'
+selection_criteria:
+  690ba2de-c74a-4a85-bdc1-22b4b283a831:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 690ba2de-c74a-4a85-bdc1-22b4b283a831
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      speakers: speakers
+selection_logic: and
+weight: -5
+relationships: {  }

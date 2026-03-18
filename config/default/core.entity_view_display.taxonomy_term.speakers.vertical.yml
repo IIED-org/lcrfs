@@ -10,6 +10,7 @@ dependencies:
     - field.field.taxonomy_term.speakers.field_role_or_job_title
     - field.field.taxonomy_term.speakers.field_sessions
     - field.field.taxonomy_term.speakers.field_website
+    - field.field.taxonomy_term.speakers.rabbit_hole__settings
     - taxonomy.vocabulary.speakers
   module:
     - layout_builder
@@ -51,3 +52,4 @@ hidden:
   field_last_name: true
   field_sessions: true
   field_website: true
+  rabbit_hole__settings: true

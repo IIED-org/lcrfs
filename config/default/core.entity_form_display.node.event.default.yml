@@ -117,13 +117,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_session_id:
-    type: tagify_select_widget
+    type: options_select
     weight: 1
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_session_type:
     type: tagify_select_widget
@@ -179,6 +176,16 @@ content:
     third_party_settings: {  }
   scheduler_settings:
     weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap_index_now:
+    weight: 130
     region: content
     settings: {  }
     third_party_settings: {  }

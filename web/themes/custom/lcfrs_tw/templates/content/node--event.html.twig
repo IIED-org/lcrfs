@@ -29,8 +29,8 @@ Session full page
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content prose prose-lg mx-auto') }}>
-    <div class="pt-6"><a href="/programme">Programme</a> / <span class="text-neutral-500">{{ "session " }} {{ content.field_session_id.0 }}</span></div>
-    <h1 class="mx-auto page-title max-w-prose">{{ node.label }}</h1>
+    <div class="pt-6"><a href="/programme">Programme</a> / <span class="text-neutral-500">{{ "Session " }} {{ content.field_session_id.0 }}</span></div>
+    <h1 class="page-title max-w-prose mx-auto">{{ node.label }}</h1>
 
     {% if content.field_room|render|striptags|trim is not empty %}
       <div class="flex gap-2 mb-6 font-bold">{{ content.field_event__date }} {{ " in " }} {{ content.field_room }}</div>
@@ -38,13 +38,13 @@ Session full page
       <div class="mb-6 font-bold">{{ content.field_event__date }}</div>
     {% endif %}
 
-    <div class="px-4 py-px mb-6 bg-fs-violet-100">{{ content.field_notifications }}</div>
+    <div class="bg-fs-violet-100 px-4 py-px mb-6">{{ content.field_notifications }}</div>
    
     {% set tags = node.field_tags is defined ? node.field_tags : [] %}
 
     <div class="flex flex-wrap gap-2 mb-6">
       {% if node.field_session_type.0.entity.label is defined %}
-        {# <div class="px-2 rounded-full bg-fs-green-300">{{ node.field_session_type.0.entity.label }}</div> #}
+        {# <div class="bg-fs-green-300 px-2 rounded-full">{{ node.field_session_type.0.entity.label }}</div> #}
           {% set session_type_label = node.field_session_type.0.entity.label %}
           <div class="px-2 rounded-full
             {% if session_type_label == 'Challenge session' %}
@@ -59,12 +59,12 @@ Session full page
       
       {% for tag in tags %}
         {% if tag.entity.label is defined %}
-          <div class="px-2 rounded-full bg-neutral-200">{{ tag.entity.label }}</div>
+          <div class="bg-neutral-200 px-2 rounded-full">{{ tag.entity.label }}</div>
         {% endif %}
       {% endfor %}
     </div>
 
-    <div class="mb-8 lg:prose-xl">{{ content.field_description }}</div>
+    <div class="lg:prose-xl mb-8">{{ content.field_description }}</div>
     <div class="not-prose">{{ content.field_speakers }}</div>
     <div class="">{{ content.field_content }}</div>
     <div class="">{{ content.field_content_paragraphs }}
