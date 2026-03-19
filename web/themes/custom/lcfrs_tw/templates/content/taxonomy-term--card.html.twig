@@ -1,0 +1,56 @@
+{#
+    /**
+     * @file
+     * Theme override to display a taxonomy term.
+     *
+     * Available variables:
+     * - url: URL of the current term.
+     * - name: (optional) Name of the current term.
+     * - content: Items for the content of the term (fields and description).
+     *   Use 'content' to print them all, or print a subset such as
+     *   'content.description'. Use the following code to exclude the
+     *   printing of a given child element:
+     *   @code
+     *   {{ content|without('description') }}
+     *   @endcode
+     * - attributes: HTML attributes for the wrapper.
+     * - page: Flag for the full page state.
+     * - term: The taxonomy term entity, including:
+     *   - id: The ID of the taxonomy term.
+     *   - bundle: Machine name of the current vocabulary.
+     * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+     *
+     * @see template_preprocess_taxonomy_term()
+     */
+    
+     For speaker cards when they appear on the speaker page
+    #}
+
+    <div class="border-neutral-300 flex flex-col justify-between h-full mb-6 bg-white border">
+      <div class="relative flex flex-col items-center p-4 text-center">
+        <div class="max-w-48 mb-4 overflow-hidden rounded-full">
+          {{ content.field_photo }}
+        </div>
+        <div class="font-display text-neutral-900 mb-4 text-xl font-semibold">
+          {{ name }}
+        </div>
+        <div class="mb-4">
+          {{ content.field_role_or_job_title }}
+        </div>
+        <div class="text-neutral-600 flex-grow mb-6">
+          {{ content.field_organisation }}
+        </div>
+        <div class="button flex items-center">
+          {{ content.field_website }}
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+      </div>
+      <div class="bg-fs-cyan-100">
+        <div class="p-4 font-bold">
+          {{ drupal_view('speakers', 'block_6', term.id) }}
+          {# {{ content.field_sessions }} #}
+        </div>
+      </div>
+    </div>

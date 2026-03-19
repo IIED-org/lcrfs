@@ -9,7 +9,6 @@ dependencies:
     - field.field.taxonomy_term.speakers.field_role_or_job_title
     - field.field.taxonomy_term.speakers.field_sessions
     - field.field.taxonomy_term.speakers.field_website
-    - field.field.taxonomy_term.speakers.rabbit_hole__settings
     - taxonomy.vocabulary.speakers
   module:
     - link
@@ -78,5 +77,4 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-hidden:
-  rabbit_hole__settings: true
+hidden: {  }

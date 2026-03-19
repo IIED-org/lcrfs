@@ -10,11 +10,10 @@ dependencies:
     - field.field.taxonomy_term.speakers.field_role_or_job_title
     - field.field.taxonomy_term.speakers.field_sessions
     - field.field.taxonomy_term.speakers.field_website
-    - field.field.taxonomy_term.speakers.rabbit_hole__settings
     - taxonomy.vocabulary.speakers
   module:
     - layout_builder
-    - link
+    - linkit
     - text
 third_party_settings:
   layout_builder:
@@ -34,7 +33,7 @@ content:
     region: content
   field_organisation:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -56,16 +55,8 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_sessions:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_website:
-    type: link
+    type: linkit
     label: hidden
     settings:
       trim_length: 80
@@ -73,9 +64,10 @@ content:
       url_plain: false
       rel: ''
       target: ''
+      linkit_profile: default
     third_party_settings: {  }
     weight: 4
     region: content
 hidden:
   field_last_name: true
-  rabbit_hole__settings: true
+  field_sessions: true
