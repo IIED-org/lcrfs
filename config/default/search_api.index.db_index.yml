@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_description
+    - field.storage.node.field_event__date
     - search_api.server.search_db
   module:
     - node
@@ -29,6 +30,19 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_description
+  field_event__date:
+    label: Date
+    datasource_id: 'entity:node'
+    property_path: field_event__date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_event__date
+  field_event__date_1:
+    label: 'Reverse reference: <em class="placeholder">Content</em> using <em class="placeholder">Speakers</em> » Date'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: 'search_api_reverse_entity_references_node__field_speakers:field_event__date'
+    type: date
   name:
     label: Name
     datasource_id: 'entity:taxonomy_term'

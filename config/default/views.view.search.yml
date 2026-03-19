@@ -5,7 +5,10 @@ dependencies:
   config:
     - search_api.index.db_index
   module:
+    - better_exposed_filters
+    - node
     - search_api
+    - taxonomy
     - text
 id: search
 label: Search
@@ -115,7 +118,7 @@ display:
             offset: false
             offset_label: Offset
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Submit
           reset_button: false
@@ -124,6 +127,37 @@ display:
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: content_format
+          bef:
+            general:
+              autosubmit: true
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
+              autosubmit_exclude_textfield: true
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  open_by_default: false
+                  is_secondary: false
+                  hide_label: true
+                  field_classes: ''
+                  sort_options_unsupported: ''
       access:
         type: none
         options: {  }
@@ -189,6 +223,101 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
+        field_event_date:
+          id: field_event_date
+          table: search_api_index_db_index
+          field: field_event_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: '2026-06-25 09:00:00'
+            type: date
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_event_date_1:
+          id: field_event_date_1
+          table: search_api_index_db_index
+          field: field_event_date_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: '2026-06-25 09:00:00'
+            type: date
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
       style:
         type: default
       row:
@@ -208,7 +337,29 @@ display:
           skip_access: false
           preserve_facet_query_args: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        field_sessions:
+          id: field_sessions
+          table: search_api_datasource_db_index_entity_taxonomy_term
+          field: field_sessions
+          relationship: none
+          group_type: group
+          admin_label: 'Sessions: Content'
+          entity_type: taxonomy_term
+          plugin_id: search_api
+          required: false
+          skip_access: false
+        field_speakers:
+          id: field_speakers
+          table: search_api_datasource_db_index_entity_node
+          field: field_speakers
+          relationship: none
+          group_type: group
+          admin_label: 'Speakers: Taxonomy term'
+          entity_type: node
+          plugin_id: search_api
+          required: false
+          skip_access: false
       css_class: container
       header: {  }
       footer: {  }

@@ -57,35 +57,39 @@
                  */
                 #}
 
-    {{ attach_library('lcfrs_tw/search-results') }}
-    <div class="border-neutral-300 rounded-2xl p-4 mb-6 space-x-4 border">
-      <a href="{{ url }}">
-        <h3>
-          {{ label }}
-        </h3>
-        <div class="search-result__snippet-info py-2">
-          {{ content.field_event__date|render|striptags }} |
-          {{ content.field_session_type|render|striptags}} |
-          {{ content.field_room|render|striptags}}
+{{ attach_library('lcfrs_tw/search-results') }}
+<a href="{{ url }}">
+	<div class="border-neutral-300 rounded-2xl p-4 mb-6 space-x-4 border">
 
-        </div>
-        <div class="search-result__snippet-info py-2">
-          {{ content.field_description }}
-        </div>
-        <div class="py-2">
-          Speakers: {{ content.field_speakers|render|striptags }}
-          {% if snippet %}
-            <p{{content_attributes.addClass('search-result__snippet')}}>
-              {{ snippet }}
-            </p>
-          {% endif %}
-          {% if info %}
-            <p class="search-result__info">
-              {{ info }}
-            </p>
-          {% endif %}
-        </div>
+		<h3>
+			{{ label }}
+		</h3>
+		<div class="search-result__snippet-info py-2">
+			{{ content.field_event__date|render|striptags }}
+			|
+			{{ content.field_session_type|render|striptags}}
+			|
+			{{ content.field_room|render|striptags}}
+
+		</div>
+		<div class="search-result__snippet-info py-2">
+			{{ content.field_description }}
+		</div>
+		<div class="py-2">
+			Speakers:
+			{{ content.field_speakers|render|striptags }}
+			{% if snippet %}
+				<p{{content_attributes.addClass('search-result__snippet')}}>
+					{{ snippet }}
+				</p>
+			{% endif %}
+			{% if info %}
+				<p class="search-result__info">
+					{{ info }}
+				</p>
+			{% endif %}
+		</div>
 
 
-      </a>
-    </div>
+	</div>
+</a>
