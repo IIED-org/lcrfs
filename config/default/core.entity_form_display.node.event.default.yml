@@ -20,6 +20,7 @@ dependencies:
     - content_moderation
     - paragraphs
     - path
+    - shs
     - smart_date
     - tagify
     - text
@@ -117,10 +118,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_session_id:
-    type: options_select
+    type: options_shs
     weight: 1
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: true
     third_party_settings: {  }
   field_session_type:
     type: tagify_select_widget

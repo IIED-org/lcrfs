@@ -1,8 +1,9 @@
-uuid: 52820bf7-00b1-4a78-b67f-d9b5069a0ea4
+uuid: 023865a9-7914-43bf-8f66-22ff14e96429
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.search_result
     - field.field.taxonomy_term.speakers.field_last_name
     - field.field.taxonomy_term.speakers.field_organisation
     - field.field.taxonomy_term.speakers.field_photo
@@ -11,12 +12,16 @@ dependencies:
     - field.field.taxonomy_term.speakers.field_website
     - taxonomy.vocabulary.speakers
   module:
-    - link
+    - layout_builder
     - text
-id: taxonomy_term.speakers.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.speakers.search_result
 targetEntityType: taxonomy_term
 bundle: speakers
-mode: default
+mode: search_result
 content:
   description:
     type: text_default
@@ -25,17 +30,9 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_last_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_organisation:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -57,25 +54,8 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_sessions:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_website:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
+  field_last_name: true
+  field_sessions: true
+  field_website: true
   search_api_excerpt: true

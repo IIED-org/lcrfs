@@ -2,10 +2,13 @@ uuid: d1609e32-eb62-4350-bdc8-69780cc64bf6
 langcode: en
 status: true
 dependencies:
+  config:
+    - search_api_autocomplete.search.search
   module:
     - contact
     - klaro
     - media
+    - search_api_autocomplete
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
@@ -17,4 +20,5 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'use klaro'
+  - 'use search_api_autocomplete for search'
   - 'view media'

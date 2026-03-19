@@ -32,7 +32,7 @@
     'mb-12',
   ]
 %}
-{# {{ attach_library('lcfrs_tw/node') }} #}
+
 <div{{attributes.setAttribute('id','taxonomy-term-'~term.id).addClass(classes, 'max-w-screen-md')}}>
 	{{ title_prefix }}
 	{% if name and not page %}
@@ -48,10 +48,11 @@
 			{{ content|without('field_photo') }}
 		</div>
 	</div>
-</div>
+
 
 <div class="bg-fs-cyan-100 max-w-prose mx-auto prose prose-lg">
 	<div class="p-4 font-bold">
 		{{ drupal_view('speakers', 'block_5', term.id) }}
 	</div>
+</div>
 </div>
