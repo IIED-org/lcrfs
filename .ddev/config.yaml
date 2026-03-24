@@ -15,10 +15,10 @@ web_environment: []
 corepack_enable: true
 hooks:
   post-start:
-    - composer: install
+    - composer: install --ignore-platform-reqs
     - exec: drush updb
-    - exec: "cd web/themes/custom/lcfrs_tw && npm install"
-    - exec: "cd web/themes/custom/lcfrs_tw && npm run dev"
+    - exec: "cd web/themes/custom/lcfrs_tw && npm install ignore-warnings"
+    - exec: "cd web/themes/custom/lcfrs_tw && npm run build:dev"
     - exec: drush cr
 
 # Key features of DDEV's config.yaml:

@@ -280,7 +280,7 @@ display:
         arguments: false
       display_description: ''
       display_extenders: {  }
-      block_description: 'Speakers page block'
+      block_description: 'Speakers 2025 block'
     cache_metadata:
       max-age: -1
       contexts:
