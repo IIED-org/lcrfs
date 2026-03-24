@@ -11,13 +11,34 @@ id: search
 label: Search
 index_id: db_index
 suggester_settings:
+  live_results:
+    fields: {  }
+    highlight:
+      enabled: false
+      field: ''
+    suggest_keys: false
+    view_modes:
+      'entity:node':
+        event: ''
+      'entity:taxonomy_term':
+        speakers: ''
   server:
     fields: {  }
-suggester_weights: {  }
-suggester_limits: {  }
+suggester_weights:
+  live_results: 0
+  server: 0
+suggester_limits:
+  live_results: 10
+  server: 10
 search_settings:
   'views:search':
     displays:
       default: true
       selected: {  }
-options: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  delay: null
+  submit_button_selector: ':submit'
+  autosubmit: true
