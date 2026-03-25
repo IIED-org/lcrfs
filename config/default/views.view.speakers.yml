@@ -1201,8 +1201,8 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ name }}. {{ title }}'
-            make_link: false
+            text: '{{ name }}. <span class="text-fs-violet-500">{{ title }}</span>'
+            make_link: true
             path: ''
             absolute: false
             external: false
@@ -1233,7 +1233,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1546,7 +1546,7 @@ display:
       group_by: true
       display_description: ''
       display_extenders: {  }
-      block_description: 'Speaker sessions'
+      block_description: 'Sessions for speaker'
     cache_metadata:
       max-age: -1
       contexts:
@@ -2332,7 +2332,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ name }}. {{ title }}'
+            text: '{{ name }}. <span class="text-fs-violet-500">{{ title }}</span>'
             make_link: false
             path: ''
             absolute: false

@@ -10,12 +10,10 @@ dependencies:
     - field.field.taxonomy_term.speakers.field_role_or_job_title
     - field.field.taxonomy_term.speakers.field_sessions
     - field.field.taxonomy_term.speakers.field_website
-    - image.style.thumbnail
     - taxonomy.vocabulary.speakers
   module:
     - layout_builder
     - linkit
-    - media
     - text
 third_party_settings:
   layout_builder:
@@ -42,13 +40,11 @@ content:
     weight: 3
     region: content
   field_photo:
-    type: media_thumbnail
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: thumbnail
-      image_loading:
-        attribute: lazy
+      view_mode: small
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
