@@ -23,17 +23,35 @@ function lcfrs_tw_preprocess_image_widget(array &$variables): void {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
+// function lcfrs_tw_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+//   if (!empty($variables['elements']['#view_mode'])) {
+//     $view_mode = $variables['elements']['#view_mode'];
+//     // Add vocabulary--view_mode template
+//     if (isset($variables['term'])) {
+//       $vocab = $variables['term']->bundle();
+//       $suggestions[] = 'taxonomy_term__' . $vocab . '__' . $view_mode;
+//     }
+//     // Add view mode template
+//     // $suggestions[] .= 'taxonomy_term__' . $view_mode;
+//   }
+// }
+
+/**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
 function lcfrs_tw_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
-  if (!empty($variables['elements']['#view_mode'])) {
-    $view_mode = $variables['elements']['#view_mode'];
-    // Add vocabulary--view_mode template
-    if (isset($variables['term'])) {
-      $vocab = $variables['term']->bundle();
-      $suggestions[] = 'taxonomy_term__' . $vocab . '__' . $view_mode;
-    }
-    // Add view mode template
-    $suggestions[] = 'taxonomy_term__' . $view_mode;
-  }
-}
+  $term = $variables['elements']['#taxonomy_term'];
+  $view_mode = $variables['elements']['#view_mode'];
+  $sanitized_view_mode = strtr($view_mode, '.', '_');
+
+  // Add suggestion for view mode only.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+
+  // Add suggestion for vocabulary + view mode.
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+
+  // Add suggestion for term ID + view mode.
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}   
 
 

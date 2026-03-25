@@ -4,6 +4,6 @@ hotlink: false
 origin: 'https://www.climateresilience.finance'
 origin_dir: sites/default/files
 proxy_headers: ''
-use_imagecache_root: true
+use_imagecache_root: false
 verify: true
 excluded_extensions: ''

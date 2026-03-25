@@ -417,6 +417,7 @@ display:
     display_plugin: block
     position: 4
     display_options:
+      enabled: false
       fields:
         parent_target_id:
           id: parent_target_id
@@ -670,6 +671,7 @@ display:
     display_plugin: block
     position: 5
     display_options:
+      enabled: false
       title: 'Sessions at LCRFS'
       fields:
         parent_target_id:

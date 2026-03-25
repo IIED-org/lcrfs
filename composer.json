@@ -57,6 +57,8 @@
         "drupal/stage_file_proxy": "^3.1",
         "drupal/tfa": "^1.10",
         "drupal/twig_tweak": "^3.4",
+        "drupal/views_bulk_edit": "^3.0",
+        "drupal/views_bulk_operations": "^4.4",
         "drupal/webform": "@beta",
         "drush/drush": "^13"
     },
