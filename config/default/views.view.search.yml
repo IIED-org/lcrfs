@@ -677,7 +677,7 @@ display:
             remember_roles:
               authenticated: authenticated
             expose_fields: false
-            placeholder: Search
+            placeholder: 'Search speakers'
             searched_fields_id: search_api_fulltext_searched_fields
             value_maxlength: 128
             value_max_words: null
@@ -708,7 +708,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '2026-06-25 09:00:00'
+            value: '2026-06-25 08:00:00'
             type: date
           group: 1
           exposed: false
@@ -750,8 +750,8 @@ display:
         options:
           uses_fields: false
           columns: 4
-          cell_min_width: 100
-          grid_gutter: 20
+          cell_min_width: 260
+          grid_gutter: 40
           alignment: horizontal
       row:
         type: search_api
@@ -787,7 +787,7 @@ display:
           plugin_id: search_api
           required: false
           skip_access: false
-      css_class: 'container mx-auto pb-4 mb-8'
+      css_class: 'container mx-auto pb-4 mb-8 px-24'
       use_ajax: true
       display_description: ''
       header:

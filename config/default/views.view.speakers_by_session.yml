@@ -1,6 +1,6 @@
 uuid: b7bfe7d1-1d47-434a-b068-73857b2de186
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - node.type.event
@@ -163,6 +163,7 @@ display:
       relationships: {  }
       header: {  }
       footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
