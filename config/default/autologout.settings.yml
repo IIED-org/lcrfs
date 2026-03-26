@@ -9,11 +9,11 @@ no_individual_logout_threshold: true
 role_logout: false
 role_logout_max: false
 redirect_url: /user/login
-include_destination: false
-no_dialog: false
-message: 'You have been logged in for the maximum session duration and we need to log you out for security reasons. Please log out after each session to avoid this happening in future.'
-inactivity_message: 'You have been logged out.'
-inactivity_message_type: warning
+include_destination: true
+no_dialog: true
+message: 'You have been logged out for security, due to exceeding the maximum session duration of 8 hours'
+inactivity_message: 'You have been logged out for security, due to exceeding the maximum session duration of 8 hours'
+inactivity_message_type: status
 modal_width: 450
 enforce_admin: true
 jstimer_format: '%hours%:%mins%:%secs%'
