@@ -26,8 +26,9 @@
              For speaker cards when they appear on the speaker page
             #}
 {% set link = 'internal:' ~ url %}
-{% set link_content %}            
-    <div class="border-neutral-300 hover:bg-fs-cyan-100 hover:shadow-lg flex flex-col justify-between h-full bg-white border">
+{% set link_content %}   
+ <div class="border-neutral-300 hover:bg-fs-cyan-100 hover:shadow-lg justify-items-stretch flex flex-col h-full bg-white border">
+         
       <div class="flex-col items-center p-4 text-center">
           <div class="max-w-48 mx-auto mb-4 overflow-hidden text-center rounded-full">
             {{ content.field_photo }}
@@ -39,14 +40,15 @@
             {{ content.field_role_or_job_title|render|striptags }}
           </div>
           <div class="text-neutral-600 flex-grow">
-            {{ content.field_organisation }}
+            {{ content.field_organisation|render|striptags }}
           </div>
         </div>
-        <div class="bg-fs-cyan-100 hover:bg-white text-fs-violet-500">
-          <div class="p-4 font-bold">
+          <div class="bg-fs-cyan-100 hover:bg-white text-fs-violet-500 self-baseline w-full h-full leading-normal">
+          <div class="px-4 py-3">
             {{ drupal_view('speakers', 'block_6', term.id) }}
            </div>
         </div>
-    </div>
-  {% endset %}
+   
+</div>
+{% endset %}     
 {{ link(link_content|raw, link, { 'class': 'card-link' }) }}

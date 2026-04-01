@@ -1201,9 +1201,9 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ name }}. <span class="text-fs-violet-500">{{ title }}</span>'
+            text: '<div class="mt-1">{{ name }}. {{ title }}</div>'
             make_link: true
-            path: ''
+            path: '/{{ title }} '
             absolute: false
             external: false
             replace_spaces: false
@@ -1241,7 +1241,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns:
             entity_id: entity_id
@@ -1437,7 +1437,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '2026-06-25 09:00:00'
+            value: '2026-06-25 00:00:00'
             type: date
             granularity: second
           group: 1
