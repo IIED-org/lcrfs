@@ -10,6 +10,11 @@
  * @see template_preprocess_form()
  */
 #}
-<form{{ attributes }}>
+{%
+  set classes = [
+    'grid-flow-row',
+  ]
+%}
+<form{{ attributes.addClass(classes)  }}>
   {{ children }}
 </form>
