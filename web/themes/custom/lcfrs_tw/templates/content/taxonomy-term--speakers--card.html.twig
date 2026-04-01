@@ -27,7 +27,7 @@
             #}
 {% set link = 'internal:' ~ url %}
 {% set link_content %}   
- <div class="border-neutral-300 hover:bg-fs-cyan-100 hover:shadow-lg justify-items-stretch flex flex-col h-full bg-white border">
+ <div class="border-neutral-300 hover:bg-fs-cyan-100 hover:shadow-lg flex flex-col justify-between h-full bg-white border">
          
       <div class="flex-col items-center p-4 text-center">
           <div class="max-w-48 mx-auto mb-4 overflow-hidden text-center rounded-full">
@@ -43,7 +43,7 @@
             {{ content.field_organisation|render|striptags }}
           </div>
         </div>
-          <div class="bg-fs-cyan-100 hover:bg-white text-fs-violet-500 self-baseline w-full h-full leading-normal">
+          <div class="bg-fs-cyan-100 hover:bg-white text-fs-violet-500 w-full leading-normal">
           <div class="px-4 py-3">
             {{ drupal_view('speakers', 'block_6', term.id) }}
            </div>
