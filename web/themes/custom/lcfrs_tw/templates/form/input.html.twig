@@ -10,4 +10,11 @@
  * @see template_preprocess_input()
  */
 #}
-<input{{ attributes }} />{{ children }}
+{%
+  set classes = [
+    'overflow-hidden',
+    'not:form-submit:flex',
+    'not:form-submit:md:w-3/4',
+  ]
+%}
+<input{{ attributes.addClass(classes)  }} />{{ children }}
