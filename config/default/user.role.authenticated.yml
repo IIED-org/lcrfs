@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - dashboard.dashboard.welcome
+    - search_api_autocomplete.search.search
   module:
     - captcha
     - coffee
@@ -14,6 +15,7 @@ dependencies:
     - klaro
     - media
     - node
+    - search_api_autocomplete
     - system
     - tfa
 _core:
@@ -31,6 +33,7 @@ permissions:
   - 'setup own tfa'
   - 'skip CAPTCHA'
   - 'use klaro'
+  - 'use search_api_autocomplete for search'
   - 'view media'
   - 'view own unpublished content'
   - 'view welcome dashboard'

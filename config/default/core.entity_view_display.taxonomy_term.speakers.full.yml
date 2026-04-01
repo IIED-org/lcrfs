@@ -1,0 +1,74 @@
+uuid: 25ffa6b8-3278-4ea1-a716-a3a1b4cdc94e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.speakers.field_last_name
+    - field.field.taxonomy_term.speakers.field_organisation
+    - field.field.taxonomy_term.speakers.field_photo
+    - field.field.taxonomy_term.speakers.field_role_or_job_title
+    - field.field.taxonomy_term.speakers.field_sessions
+    - field.field.taxonomy_term.speakers.field_website
+    - taxonomy.vocabulary.speakers
+  module:
+    - layout_builder
+    - linkit
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.speakers.full
+targetEntityType: taxonomy_term
+bundle: speakers
+mode: full
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_organisation:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: small
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_role_or_job_title:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_website:
+    type: linkit
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_last_name: true
+  field_sessions: true
+  search_api_excerpt: true

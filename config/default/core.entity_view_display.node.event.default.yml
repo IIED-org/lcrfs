@@ -381,3 +381,4 @@ content:
 hidden:
   field_description: true
   links: true
+  search_api_excerpt: true

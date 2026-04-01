@@ -17,6 +17,7 @@
     },
     "require": {
         "composer/installers": "^2.3",
+        "drupal/autologout": "^2.0",
         "drupal/backup_migrate": "^5.1",
         "drupal/backup_migrate_aws_s3": "^6.0",
         "drupal/captcha_keypad": "^1.7",
@@ -51,9 +52,13 @@
         "drupal/rabbit_hole": "^2.0@beta",
         "drupal/real_aes": "^2.6",
         "drupal/recipe_installer_kit": "^1-alpha3@alpha",
+        "drupal/session_management": "^1.0",
+        "drupal/shs": "^2.0",
         "drupal/stage_file_proxy": "^3.1",
         "drupal/tfa": "^1.10",
         "drupal/twig_tweak": "^3.4",
+        "drupal/views_bulk_edit": "^3.0",
+        "drupal/views_bulk_operations": "^4.4",
         "drupal/webform": "@beta",
         "drush/drush": "^13"
     },

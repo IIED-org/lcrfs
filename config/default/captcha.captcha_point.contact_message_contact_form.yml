@@ -3,5 +3,5 @@ langcode: en
 status: true
 dependencies: {  }
 formId: contact_message_contact_form
-captchaType: captcha_keypad/Keypad
+captchaType: friendlycaptcha/friendlycaptcha
 label: contact-message-contact-form

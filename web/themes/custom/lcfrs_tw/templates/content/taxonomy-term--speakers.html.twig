@@ -22,26 +22,38 @@
  *
  * @see template_preprocess_taxonomy_term()
  */
-
- For speaker cards when they appear on the speaker page
 #}
+{%
+  set classes = [
+    'taxonomy-term',
+    'vocabulary-' ~ term.bundle|clean_class,
+    'container',
+    'mx-auto',
+    'mb-12',
+  ]
+%}
 
-<div class="mb-6 border border-neutral-300 bg-white h-full flex-col justify-between flex">
-  <div class="relative flex flex-col text-center items-center p-4">
-    <div class="mb-4 overflow-hidden rounded-full max-w-48">{{ content.field_photo }}</div>
-    <div class="mb-4 text-xl font-semibold font-display text-neutral-900">{{ name }}</div>
-    <div class="mb-4">{{ content.field_role_or_job_title }}</div>
-    <div class="mb-6 text-neutral-600 flex-grow">{{ content.field_organisation }}</div>
-    <div class="button flex items-center">
-        {{ content.field_website }}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-          <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
-        </svg>
-    </div>
-  </div>
-  <div class="bg-fs-cyan-100">
-    <div class="p-4 font-bold">
-      {{ content.field_sessions }}
-    </div>
-  </div>  
+<div{{attributes.setAttribute('id','taxonomy-term-'~term.id).addClass(classes, 'max-w-screen-md')}}>
+	{{ title_prefix }}
+	{% if name and not page %}
+		<h2>
+			<a href="{{ url }}">{{ name }}</a>
+		</h2>
+	{% endif %}
+	{{ title_suffix }}
+	   <div class="pt-6"><a href="/speakers">Speakers</a> / <span class="text-neutral-500">{{ name|render|striptags }}</span></div>
+ 	<h1 class="page-title max-w-prose mx-auto">{{ name }}</h1>
+	<div class="flex space-x-4">
+		<div class="mb-4 overflow-hidden rounded-full">{{ content.field_photo }}</div>
+		<div class="prose prose-lg">
+			{{ content|without('field_photo') }}
+		</div>
+	</div>
+
+
+<div class="bg-fs-cyan-100 max-w-prose mx-auto prose prose-lg">
+	<div class="p-4 font-bold">
+		{{ drupal_view('speakers', 'block_9', term.id) }}
+	</div>
+</div>
 </div>

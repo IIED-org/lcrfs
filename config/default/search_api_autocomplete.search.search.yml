@@ -1,0 +1,44 @@
+uuid: 7aed24b1-4f43-4cea-8c7c-f8706cb2ebdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.db_index
+    - views.view.search
+  module:
+    - views
+id: search
+label: Search
+index_id: db_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    highlight:
+      enabled: false
+      field: ''
+    suggest_keys: false
+    view_modes:
+      'entity:node':
+        event: ''
+      'entity:taxonomy_term':
+        speakers: ''
+  server:
+    fields: {  }
+suggester_weights:
+  live_results: 0
+  server: 0
+suggester_limits:
+  live_results: 10
+  server: 10
+search_settings:
+  'views:search':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  delay: null
+  submit_button_selector: ':submit'
+  autosubmit: true

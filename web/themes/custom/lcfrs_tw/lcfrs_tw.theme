@@ -23,17 +23,51 @@ function lcfrs_tw_preprocess_image_widget(array &$variables): void {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
+// function lcfrs_tw_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+//   if (!empty($variables['elements']['#view_mode'])) {
+//     $view_mode = $variables['elements']['#view_mode'];
+//     // Add vocabulary--view_mode template
+//     if (isset($variables['term'])) {
+//       $vocab = $variables['term']->bundle();
+//       $suggestions[] = 'taxonomy_term__' . $vocab . '__' . $view_mode;
+//     }
+//     // Add view mode template
+//     // $suggestions[] .= 'taxonomy_term__' . $view_mode;
+//   }
+// }
+
+/**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
 function lcfrs_tw_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
-  if (!empty($variables['elements']['#view_mode'])) {
-    $view_mode = $variables['elements']['#view_mode'];
-    // Add vocabulary--view_mode template
-    if (isset($variables['term'])) {
-      $vocab = $variables['term']->bundle();
-      $suggestions[] = 'taxonomy_term__' . $vocab . '__' . $view_mode;
-    }
-    // Add view mode template
-    $suggestions[] = 'taxonomy_term__' . $view_mode;
+  $term = $variables['elements']['#taxonomy_term'];
+  $view_mode = $variables['elements']['#view_mode'];
+  $sanitized_view_mode = strtr($view_mode, '.', '_');
+
+  // Add suggestion for view mode only.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+
+  // Add suggestion for vocabulary + view mode.
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+
+  // Add suggestion for term ID + view mode.
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}   
+
+
+/**
+ * Implements hook_preprocess_views_view().
+ *
+ * Adds BC classes that were previously added by the Views module.
+ */
+function lcfrs_tw_preprocess_views_view(&$variables): void {
+  if (!empty($variables['attributes']['class'])) {
+    $bc_classes = preg_replace('/[^a-zA-Z0-9- ]/', '-', $variables['attributes']['class']);
+    $variables['attributes']['class'] = array_merge($variables['attributes']['class'], $bc_classes);
+  }
+  if (!empty($variables['css_class'])) {
+    $existing_classes = explode(' ', $variables['css_class']);
+    $bc_classes = preg_replace('/[^a-zA-Z0-9- ]/', '-', $existing_classes);
+    $variables['css_class'] = implode(' ', array_merge($existing_classes, $bc_classes));
   }
 }
-
-

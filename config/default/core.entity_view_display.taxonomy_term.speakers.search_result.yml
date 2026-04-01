@@ -1,0 +1,61 @@
+uuid: 023865a9-7914-43bf-8f66-22ff14e96429
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_result
+    - field.field.taxonomy_term.speakers.field_last_name
+    - field.field.taxonomy_term.speakers.field_organisation
+    - field.field.taxonomy_term.speakers.field_photo
+    - field.field.taxonomy_term.speakers.field_role_or_job_title
+    - field.field.taxonomy_term.speakers.field_sessions
+    - field.field.taxonomy_term.speakers.field_website
+    - taxonomy.vocabulary.speakers
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.speakers.search_result
+targetEntityType: taxonomy_term
+bundle: speakers
+mode: search_result
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_organisation:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 1_1_square_small
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_role_or_job_title:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_last_name: true
+  field_sessions: true
+  field_website: true
+  search_api_excerpt: true

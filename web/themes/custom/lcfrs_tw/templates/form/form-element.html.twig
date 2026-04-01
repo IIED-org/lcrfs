@@ -55,12 +55,17 @@
     title_display not in ['after', 'before'] ? 'form-no-label',
     disabled == 'disabled' ? 'form-disabled',
     errors ? 'form-item--error',
+    'grid',
+    'gap-2',
+    'grid-cols-4',
   ]
 %}
 {%
   set description_classes = [
     'description',
+    'col-span-3',
     description_display == 'invisible' ? 'visually-hidden',
+
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
