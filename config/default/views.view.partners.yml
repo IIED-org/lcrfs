@@ -298,7 +298,7 @@ display:
         - 'config:field.storage.taxonomy_term.field_partner_type'
   block_2:
     id: block_2
-    display_title: 'Partners homepage block'
+    display_title: '2026 sponsors homepage block '
     display_plugin: block
     position: 2
     display_options:
@@ -338,7 +338,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 12
+            - 211
           group: 1
           exposed: false
           expose:
@@ -399,7 +399,7 @@ display:
         filter_groups: false
       display_description: ''
       display_extenders: {  }
-      block_description: 'Partners homepage block'
+      block_description: '2026 sponsors homepage block'
     cache_metadata:
       max-age: -1
       contexts:
