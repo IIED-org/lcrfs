@@ -299,7 +299,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 6
+          items_per_page: 5
       sorts:
         weight:
           id: weight
@@ -327,7 +327,7 @@ display:
           entity_type: taxonomy_term
           entity_field: parent
           plugin_id: taxonomy
-          default_action: default
+          default_action: ignore
           exception:
             value: all
             title_enable: false
@@ -394,12 +394,14 @@ display:
           view_mode: vertical
       defaults:
         pager: false
+        group_by: false
         style: false
         row: false
         sorts: false
         arguments: false
         filters: false
         filter_groups: false
+      group_by: true
       display_description: ''
       display_extenders: {  }
       block_description: 'Speakers homepage block'
