@@ -1,0 +1,17 @@
+{
+    "_hash": "da6728c5a62cd7e3c693ed4cb0abbe0fd8c9c07de381e2389c3a33b31a302098",
+    "patches": {
+        "drupal/session_limit": [
+            {
+                "package": "drupal/session_limit",
+                "description": "Too few args error 3464613",
+                "url": "https://www.drupal.org/files/issues/2025-06-18/argumentCountError-3464613-7.patch",
+                "sha256": "bc9745cf69778e5a762be277c4ce0284a5b5e20e8cdaf70473eff8d1074ec357",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

@@ -17,6 +17,7 @@
     },
     "require": {
         "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^2.0",
         "drupal/autologout": "^2.0",
         "drupal/backup_migrate": "^5.1",
         "drupal/backup_migrate_aws_s3": "^6.0",
@@ -52,7 +53,7 @@
         "drupal/rabbit_hole": "^2.0@beta",
         "drupal/real_aes": "^2.6",
         "drupal/recipe_installer_kit": "^1-alpha3@alpha",
-        "drupal/session_management": "^1.0",
+        "drupal/session_limit": "^2.0",
         "drupal/shs": "^2.0",
         "drupal/stage_file_proxy": "^3.1",
         "drupal/tfa": "^1.10",
@@ -70,6 +71,7 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "php-http/discovery": true
@@ -79,6 +81,7 @@
         "optimize-autoloader": true
     },
     "extra": {
+        "composer-exit-on-patch-failure": true,
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
@@ -111,6 +114,12 @@
                 "  * Get support: https://drupal.org/support",
                 "  * Get involved with the Drupal community: https://drupal.org/getting-involved"
             ]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/session_limit": {
+                "Too few args error 3464613": "https://www.drupal.org/files/issues/2025-06-18/argumentCountError-3464613-7.patch"
+            }
         }
     }
 }
