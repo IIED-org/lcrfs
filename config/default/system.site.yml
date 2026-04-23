@@ -2,8 +2,8 @@ _core:
   default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: en
 uuid: baf369cd-1f31-4514-89cf-53ce2a3ff287
-name: LCRFS
-mail: david.sankar@iied.org
+name: 'London Climate Resilience Finance Summit'
+mail: webmaster@iied.org
 slogan: ''
 page:
   403: /user/login

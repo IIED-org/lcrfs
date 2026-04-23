@@ -10,9 +10,9 @@ role_logout: false
 role_logout_max: false
 redirect_url: /user/login
 include_destination: true
-no_dialog: true
-message: 'You have been logged out for security, due to exceeding the maximum session duration of 12 hours'
-inactivity_message: 'You have been logged out for security, due to exceeding the maximum session duration of 12 hours'
+no_dialog: false
+message: 'You have been logged out for security, due to exceeding the maximum session duration'
+inactivity_message: 'You have been logged out for security, due to exceeding the maximum session duration'
 inactivity_message_type: status
 modal_width: 450
 enforce_admin: true
