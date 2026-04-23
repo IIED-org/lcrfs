@@ -16,10 +16,11 @@ login_plugin_settings:
     cookie_name: tfa-trusted-browser
 allowed_validation_plugins:
   tfa_totp: tfa_totp
+  tfa_recovery_code: tfa_recovery_code
 default_validation_plugin: tfa_totp
 validation_plugin_settings:
   tfa_totp:
-    time_skew: 2
+    time_skew: 4
     site_name_prefix: 1
     name_prefix: TFA
     issuer: 'LCRFS website'
