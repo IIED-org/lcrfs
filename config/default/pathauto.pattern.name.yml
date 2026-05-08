@@ -2,6 +2,8 @@ uuid: 01043d73-b5e4-45bc-83e4-c01a8076ff55
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.speakers
   module:
     - taxonomy
 id: name
@@ -12,7 +14,6 @@ selection_criteria:
   c57ed34a-9f03-4363-b66e-4e39cd43f8b9:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: c57ed34a-9f03-4363-b66e-4e39cd43f8b9
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
