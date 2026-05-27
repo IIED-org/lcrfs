@@ -10,6 +10,7 @@ dependencies:
     - taxonomy.vocabulary.partners
   content:
     - 'taxonomy_term:partner_type:13a35a94-4028-4b2b-8df7-2ed9b6ea1356'
+    - 'taxonomy_term:partner_type:529fdb0f-1385-4e26-838a-e01635a8d003'
     - 'taxonomy_term:partner_type:73c6a8be-f1ff-4dd5-ba08-0f1a724808f5'
     - 'taxonomy_term:partner_type:9c7cdfb3-1720-4e94-bdc0-57b475750b64'
     - 'taxonomy_term:partner_type:d124c4be-ae87-43b9-9519-d35cc971f9aa'
@@ -891,6 +892,52 @@ display:
           value:
             partners: partners
           group: 1
+        field_partner_type_target_id:
+          id: field_partner_type_target_id
+          table: taxonomy_term__field_partner_type
+          field: field_partner_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            - 242
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: partner_type
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
