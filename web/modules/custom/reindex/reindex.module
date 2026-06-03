@@ -1,0 +1,20 @@
+<?php
+/**
+ * Implements hook_ENTITY_TYPE_update() for type "taxonomy_term".
+ */
+function reindex_node_update($id) {
+    $nids = \Drupal::entityQuery('node')
+      ->condition('field_speakers', $term->id())
+      ->accessCheck(FALSE)
+      ->execute();
+    if ($nids) {
+      $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+      $item_ids = [];
+      foreach ($nodes as $nid => $node) {
+        foreach ($node->getTranslationLanguages() as $language) {
+          $item_ids[] = "$nid:" . $language->getId();
+        }
+      }
+      \Drupal\search_api\Entity\Index::load('db_index')->trackItemsUpdated('entity:node', $item_ids);
+  }
+}
