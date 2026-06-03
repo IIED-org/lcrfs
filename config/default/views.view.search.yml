@@ -534,9 +534,9 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '  <h1 class="page-title">[current-page:title]</h1>'
+            value: '  <h1 class="page-title">Speakers</h1>'
             format: full_html
-          tokenize: false
+          tokenize: true
       exposed_block: false
       display_extenders: {  }
       path: speakers
