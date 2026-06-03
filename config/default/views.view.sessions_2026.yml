@@ -310,7 +310,7 @@ display:
       tags: {  }
   a_1:
     id: a_1
-    display_title: 'Attachment 09:45-10.45'
+    display_title: 'Attachment 10:00-12:00'
     display_plugin: attachment
     position: 2
     display_options:
@@ -1008,7 +1008,7 @@ display:
       tags: {  }
   a_6:
     id: a_6
-    display_title: 'Attachment 16:15-17:30'
+    display_title: 'Attachment 16:00-17:30'
     display_plugin: attachment
     position: 7
     display_options:
@@ -1159,7 +1159,7 @@ display:
           admin_label: 'Coffee break'
           plugin_id: text_custom
           empty: false
-          content: '<div class="p-4 font-bold bg-fs-cyan-200 md:col-span-5 lg:ml-20">Coffee break (grab and go)</div>'
+          content: '<div class="p-4 font-bold bg-fs-cyan-200 md:col-span-5 lg:ml-20">Move to closing plenary (grab and go coffee available)</div>'
           tokenize: false
         area_text_custom:
           id: area_text_custom
