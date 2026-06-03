@@ -479,9 +479,9 @@ display:
         type: grid_responsive
         options:
           uses_fields: false
-          columns: 4
+          columns: 5
           cell_min_width: 260
-          grid_gutter: 40
+          grid_gutter: 30
           alignment: horizontal
       row:
         type: search_api
