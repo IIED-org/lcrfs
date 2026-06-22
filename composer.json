@@ -79,8 +79,7 @@
         },
         "bin-dir": "./bin",
         "sort-packages": true,
-        "optimize-autoloader": true,
-        "policy": false
+        "optimize-autoloader": true
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
@@ -89,6 +88,8 @@
                 "web-root": "web/"
             },
             "file-mapping": {
+                "[web-root]/.htaccess": false,
+                "[web-root]/robots.txt": false,
                 "[web-root]/sites/development.services.yml": false
             }
         },
