@@ -79,7 +79,8 @@
         },
         "bin-dir": "./bin",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "policy": false
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
