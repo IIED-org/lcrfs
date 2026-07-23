@@ -57,6 +57,7 @@
         "drupal/session_limit": "^2.0",
         "drupal/shs": "^2.0",
         "drupal/stage_file_proxy": "^3.1",
+        "drupal/tagify": "^1.2",
         "drupal/tfa": "^1.10",
         "drupal/twig_tweak": "^3.4",
         "drupal/varnish_purge": "^2.3",
