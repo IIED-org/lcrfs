@@ -75,7 +75,8 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "symfony/runtime": true
         },
         "bin-dir": "./bin",
         "sort-packages": true,
