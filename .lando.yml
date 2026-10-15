@@ -37,7 +37,7 @@ services:
     type: node:20
     scanner: false
     build:
-      cmd: cd /app/web/themes/custom/lcfrs_tw && npm install && npm run dev
+      cmd: cd /app/web/themes/custom/lcfrs_tw && npm install && npm run build:dev
   mailhog:
     type: mailhog
     hogfrom:
@@ -60,6 +60,14 @@ tooling:
     service: node
   gulp:
     service: node
+  tw-build:
+    service: node
+    description: Compile the theme CSS once.
+    cmd: cd /app/web/themes/custom/lcfrs_tw && npm run build:dev
+  tw-watch:
+    service: node
+    description: Watch and recompile the theme CSS (blocks until you stop it).
+    cmd: cd /app/web/themes/custom/lcfrs_tw && npm run dev
   xdebug-on:
     service: appserver
     description: Enable xdebug for apache.
