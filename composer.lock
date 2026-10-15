@@ -7416,41 +7416,35 @@
         },
         {
             "name": "drupal/project_browser",
-            "version": "2.1.3",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/project_browser.git",
-                "reference": "2.1.3"
+                "reference": "2.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/project_browser-2.1.3.zip",
-                "reference": "2.1.3",
-                "shasum": "8204cef83d6b16ef1ee378cac5bd7f5160934ab0"
+                "url": "https://ftp.drupal.org/files/projects/project_browser-2.1.5.zip",
+                "reference": "2.1.5",
+                "shasum": "81dfe43c1ed7d2b6ab5e6ed12fbf7500b4c01bff"
             },
             "require": {
                 "composer-runtime-api": "^2",
-                "composer/semver": "^3.2",
-                "drupal/core": "^11.2",
-                "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^6 || ^7",
-                "php": ">=8.1",
-                "symfony/finder": "^6.3 || ^7"
+                "drupal/core": "^11.2 || ^12",
+                "ext-simplexml": "*"
             },
             "conflict": {
                 "drupal/automatic_updates": "<4",
                 "drupal/gin": "<4.0.6"
             },
             "require-dev": {
-                "colinodell/psr-testlogger": "^1.2",
-                "drush/drush": "^12.5 || ^13",
-                "mglaman/phpstan-drupal": "^1.3.7 || ^2.0.5"
+                "drush/drush": ">=12.5"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.3",
-                    "datestamp": "1766014895",
+                    "version": "2.1.5",
+                    "datestamp": "1790181935",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
